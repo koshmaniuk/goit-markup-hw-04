@@ -133,6 +133,8 @@ img {
 .header {
   border-bottom: 1px solid var(--accent);
   padding: 24px 0;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -152,6 +154,7 @@ img {
   text-decoration: none;
   margin-right: 76px;
   display: inline-block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-studio-header {
@@ -190,7 +193,7 @@ img {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-address {
@@ -211,7 +214,7 @@ img {
   width: 100%;
   position: absolute;
   left: 0;
-  bottom: -3px;
+  bottom: -1px;
   height: 4px;
   background-color: var(--pressed-state);
   border-radius: 2px;
@@ -322,6 +325,7 @@ img {
     url(../images/herobg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -338,8 +342,7 @@ img {
   min-width: 169px;
   height: 56px;
   border-radius: 4px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -390,6 +393,10 @@ img {
   border-radius: 4px;
   padding: 24px 100px;
   margin-bottom: 8px;
+  display: flex;
+  height: 112px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* WHAT ARE WE DOING SECTION*/
@@ -481,6 +488,12 @@ img {
   height: 40px;
   background-color: var(--primary-brand);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-logo:hover,
+.icon-logo:focus {
+  background-color: var(--pressed-state);
 }
 
 .icon {
@@ -521,14 +534,19 @@ img {
   border-radius: 4px;
   align-items: center;
   justify-content: center;
-  fill: var(--subtle-text);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--subtle-text);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .company-client:hover,
 .company-client:focus {
   border-color: var(--pressed-state);
-  fill: var(--pressed-state);
+  color: var(--pressed-state);
+}
+
+.company-logo {
+  fill: currentColor;
+  height: 56px;
 }
 
 /* PORTFOLIO PAGE SECTION */
@@ -539,8 +557,6 @@ img {
 */
 
 .portfolio-button {
-  color: var(--primary-brand);
-  background-color: var(--light);
   font-size: 16px;
   letter-spacing: 0.04em;
 }
@@ -589,9 +605,9 @@ img {
   padding: 12px 24px;
   border: 1px solid var(--accent);
   border-radius: 4px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -614,11 +630,6 @@ img {
   letter-spacing: 0.02em;
 }
 
-.portfolio-link {
-  display: block;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .overlay-item {
   position: relative;
   overflow: hidden;
@@ -639,9 +650,20 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.portfolio-link {
+  display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .portfolio-link:hover p,
 .portfolio-link:focus p {
   transform: translateY(0%);
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 /* MODAL WINDOW */
